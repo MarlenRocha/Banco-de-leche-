@@ -1,0 +1,72 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Recepción</h1>
+</div>
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Folio del frasco:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @recepcion.frasco.id %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Curp de la donadora:</p> 
+    </div>
+    <div class="col-6">
+     <p><%= @recepcion.frasco.donacion.donadora.curp %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre de la donadora:</p> 
+    </div>
+    <div class="col-6">
+     <p><%= @recepcion.frasco.donacion.donadora.nombre %><%= " "%><%= @recepcion.frasco.donacion.donadora.paterno %><%= " "%><%= @recepcion.frasco.donacion.donadora.materno %></p>
+    </div>
+  </div>
+  
+  
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Cantidad:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @recepcion.cantidad %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Fecha de extracción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @recepcion.fecha_extraccion %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Área:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @recepcion.area.nombre %></p>
+    </div>
+  </div>
+
+</div>
+
+<%= link_to 'Editar', edit_recepcion_path(@recepcion), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', recepciones_path, :class => "btng btn mr-2" %>
+
+
+

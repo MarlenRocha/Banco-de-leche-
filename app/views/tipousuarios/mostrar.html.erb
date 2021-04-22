@@ -1,0 +1,65 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Tipo de usuario</h1>
+</div>
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @tipousuario.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Descripción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @tipousuario.descripcion%></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Salario:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @tipousuario.salario %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Rango:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @tipousuario.rango %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Seguro:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @tipousuario.seguro %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Días de vacaciones:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @tipousuario.vacaciones %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Regesar', tipousuarios_inicio_path, :class => "btng btn" %>

@@ -1,0 +1,44 @@
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: donacion, id: 'formulario_donaciones', local: true) do |form| %>
+  <% if donacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(donacion.errors.count, "error") %> prohibited this donacion from being saved:</h2>
+
+      <ul>
+      <% donacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="donadora_prueba_vih">Tipo de donación:</label>
+          <select name="donacion[tipo_donacion]" id="donacion_tipo_donacion" class="form-control">
+            <option value="">Selecciona...</option>
+            <option value="Homóloga">Homóloga</option>
+            <option value="Heteróloga">Heteróloga</option>
+           </select>        
+        </div>
+        <div class="form-group col-md-6">
+            
+             <%= form.label :curp_de_la_donadora %>
+            <%= form.select(:donadora_id, @donadoras.collect{ |e| [e.curp, e.id]}, {include_blank: 'Selecciona...'}, :class => "form-control") %>         
+        </div> 
+    </div>
+
+<div class="form-row">
+    <div class="form-group col-md-12">
+           <%= form.label :fecha_registro_donacion %>
+           <%= form.date_field :fecha_registro_donacion, :class => "form-control" %>      
+    </div>
+ </div>   
+
+    <%= form.submit "Guardar", :class => "btng btn" %>
+    <%= link_to 'Regresar', donaciones_path, :class => "btng btn"  %>
+
+    
+<% end %>
+</div>

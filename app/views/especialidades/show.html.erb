@@ -1,0 +1,67 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Especialidad</h1>
+</div>
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @especialidad.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Descripción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @especialidad.descripcion%></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Orientación:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @especialidad.orientacion %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Agrupación:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @especialidad.agrupacion %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">lugar:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @especialidad.lugar %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Año:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @especialidad.anio %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_especialidad_path(@especialidad), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', especialidades_path, :class => "btng btn mr-2" %>

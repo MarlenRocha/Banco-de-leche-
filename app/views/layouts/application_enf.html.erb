@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pblh</title>
+
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8818805f38.js" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'bootstrap', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
+
+
+<style>
+
+#alert{
+  color: red;
+ }
+ #alerta{
+  color: red;
+ }
+.error{
+  color: red;
+ }
+ .usuario-valido{
+  text-align: right;
+  margin-right: 50px;
+ }  
+
+h1{
+    font-family: 'Dosis', sans-serif;
+ }
+
+.btng{
+    background-color: #cf3b76; color: white;
+}
+.btng:hover{
+   color: white;
+
+}
+a.btng.btn {
+  color: white;
+}
+
+.mostrar{
+  font-size:30px;
+  color:green;
+}
+.editar{
+  font-size:30px;
+  color:yellow;
+}
+.eliminar{
+  font-size:30px;
+  color:red;
+}
+p{
+  font-size: 15px;
+}
+.mostrar-contenedor{
+  border: solid 3px #f1f1f1;
+}
+.btn-outline-primary{
+  color: white;
+  border-color: white;
+}
+.btn-outline-primary:visited{
+  color: white;
+}
+.btn-outline-primary:hover{
+  background-color: #cf3b76;
+  border-color: #cf3b76;
+}
+.encabezado{
+
+  background-image: url(/assets/lactanciamaterna.jpg);
+  background-repeat: no-repeat;
+  background-size: 1400px 190px;
+ }
+
+ .fa-twitter,.fa-facebook{
+    padding: 20px;
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    color: white;
+  }
+  .fa-facebook:visited,.fa-twitter:visited {
+    
+    color: white;
+  }
+ 
+  .fa-facebook:hover{
+    text-decoration: none;
+    background-color: white;
+    color: #48639e;
+  }
+  .fa-twitter:hover{
+    text-decoration: none;
+    background-color: white;
+    color: #2aa1f2;
+  }
+  .fa-twitter {
+    background: #2aa1f2;
+    color: white;
+  }
+  .fa-facebook {
+    background: #48639e;
+    color: white;
+  }
+  
+</style>  
+    
+</head>
+
+  <body>
+
+  <%= render 'layouts/menuenf' %>
+   <%= render 'layouts/header' %>
+    
+    
+    <div class="container p-4">
+      <div class="row">
+          <%= yield %>
+      </div>
+    </div>
+
+
+  <%= render 'layouts/footer' %>
+
+    
+  </body>
+</html>

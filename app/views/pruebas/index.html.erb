@@ -1,0 +1,67 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+<div class="col-md-12 mb-4 text-center" >
+      <p id="alert"><%= alert %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Análisis</h1>
+</div>
+
+<div class="col-md-12 pt-4">
+    <%= link_to 'Nuevo registro', new_prueba_path, :class => "btng btn" %>
+</div> 
+
+<div class="col-md-12 pt-4 table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Embalaje</th>
+      <th>Color</th>
+      <th>Suciedad</th>
+      <th>Olor</th>
+      <th>Crematocrito</th>
+      <th>Kilocalorias</th>
+      <th>Proteinas</th>
+      <th>Carbohidratos</th>
+      <th>Grasas</th>
+      <th>Clasificacion</th>
+      <th>Cantidad almacenada</th>
+      <th>Cantidad desechada</th>
+      <th>Etiqueta</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pruebas.each do |prueba| %>
+      <tr>
+        <td><%= prueba.embalaje %></td>
+        <td><%= prueba.color %></td>
+        <td><%= prueba.suciedad %></td>
+        <td><%= prueba.olor %></td>
+        <td><%= prueba.crematocrito %></td>
+        <td><%= prueba.kilocalorias %></td>
+        <td><%= prueba.proteinas %></td>
+        <td><%= prueba.carbohidratos %></td>
+        <td><%= prueba.grasas %></td>
+        <td><%= prueba.clasificacion.nombre %></td>
+        <td><%= prueba.cantidad_almacenada %></td>
+        <td><%= prueba.cantidad_desechada %></td>
+        <td><%= prueba.etiqueta.etiqueta %></td>
+        <td><%= prueba.cantidad %></td>
+        
+
+        <td><%= link_to content_tag(:i, nil, class: "mostrar fas fa-eye", :title=> "Mostar"),prueba %></td>
+
+        <td><%= link_to content_tag(:i, nil, class: "editar fas fa-edit", :title=> "Editar"),edit_prueba_path(prueba) %></td>
+                   
+        <td><%= link_to content_tag(:i, nil, class: "eliminar fas fa-times", :title=> "Eliminar"), prueba, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>

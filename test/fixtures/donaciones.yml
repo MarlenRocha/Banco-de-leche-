@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_registro_donacion: MyString
+  donadora: one
+
+two:
+  fecha_registro_donacion: MyString
+  donadora: two

@@ -1,0 +1,56 @@
+<div class="col-md-12 pt-4"> 
+
+<%= form_with(model: especialidad, id: 'formulario_especialidades',  local: true) do |form| %>
+  <% if especialidad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(especialidad.errors.count, "error") %> prohibited this especialidad from being saved:</h2>
+
+      <ul>
+      <% especialidad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :nombre %>
+           <%= form.text_field :nombre, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :descripción %>
+            <%= form.text_field :descripcion, :class => "form-control" %>            
+        </div> 
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :orientación %>
+          <%= form.text_field :orientacion, :class => "form-control" %>      
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :agrupación %>
+            <%= form.text_field :agrupacion, :class => "form-control" %>        
+        </div> 
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :lugar %>
+            <%= form.text_field :lugar, :class => "form-control" %>    
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :año %>
+            <%= form.text_field :anio, :class => "form-control" %>
+        </div> 
+    </div>
+
+  
+  <%= form.submit "Guardar", :class => "btng btn" %>
+ 
+<%= link_to 'Regresar', especialidades_path, :class => "btng btn" %>
+<% end %>
+</div>
+
+
+

@@ -1,0 +1,2 @@
+class Etiquetadonacion < ApplicationRecord
+end

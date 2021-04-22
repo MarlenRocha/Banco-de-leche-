@@ -1,0 +1,100 @@
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: reciennacido, id: 'formulario_reciennacidos', local: true) do |form| %>
+  <% if reciennacido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reciennacido.errors.count, "error") %> prohibited this reciennacido from being saved:</h2>
+
+      <ul>
+      <% reciennacido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :curp_de_la_madre %>
+          <%= form.text_field :curp, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :nombre_de_la_madre %>
+          <%= form.text_field :nombre_madre, :class => "form-control" %>           
+        </div> 
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :apellido_paterno_de_la_madre %>
+          <%= form.text_field :apellido_paterno_madre, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :apellido_materno_de_la_madre %>
+          <%= form.text_field :apellido_materno_madre, :class => "form-control" %>           
+        </div> 
+    </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :edad_de_la_madre %>
+            <%= form.text_field :edad_madre, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-6">
+          <%= form.label :fecha_de_nacimiento %>
+    <%= form.date_field :fecha_nacimiento, :class => "form-control" %>   
+                      
+        </div> 
+    </div>
+    
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+           <%= form.label :Área_de_hospital %>
+    <%= form.select(:area_id, @areas.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>    
+        </div>
+        <div class="form-group col-md-4">
+            <%= form.label :médico %>
+            <%= form.select(:medico_id, @medicos.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>
+        </div> 
+        <div class="form-group col-md-4">
+            <%= form.label :afección %>
+            <%= form.select(:enfermedad_id, @enfermedades.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>
+        </div> 
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+           <%= form.label :estatura %>
+    <%= form.text_field :altura, :class => "form-control", :placeholder => "estatura(cm)" %>     
+        </div>
+      <div class="form-group col-md-4">
+           <%= form.label :peso %>
+    <%= form.text_field :peso, :class => "form-control", :placeholder => "peso(kg)" %>      
+        </div>
+        <div class="form-group col-md-4">
+             <%= form.label :descripción %>
+            <%= form.text_field :descripcion, :class => "form-control" %>    
+        </div> 
+    </div>
+  
+  <%= form.submit "Guardar", :class => "btng btn" %>
+  
+  <%= link_to 'Regresar', reciennacidos_path, :class => "btng btn" %>
+<% end %>
+</div>
+    
+
+
+  <script type="text/javascript">
+    var actualiza = window.location.pathname.split("/").pop()
+    console.log(actualiza) 
+    if (actualiza == "edit"){
+      console.log("holi")
+      
+      document.getElementById('reciennacido_curp').name = "reciennacido[curpa]"
+    }
+      
+</script>

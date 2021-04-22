@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pasteurizacion: MyString
+  etiqueta: one
+  cantidad_almacenada: MyString
+  cantidad_desechada: MyString
+  acidez_dornic: MyString
+
+two:
+  pasteurizacion: MyString
+  etiqueta: two
+  cantidad_almacenada: MyString
+  cantidad_desechada: MyString
+  acidez_dornic: MyString

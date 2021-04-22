@@ -1,0 +1,71 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+
+
+
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Clasificación</h1>
+</div>
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @clasificacion.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Descripción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @clasificacion.descripcion%></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Color:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @clasificacion.color %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Consitencia:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @clasificacion.consistencia %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Proteína:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @clasificacion.proteina %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Cantidad:</p> 
+    </div>
+    <div class="col-6">
+      <p> <%= @clasificacion.cantidad %></p>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Regesar', clasificaciones_inicio_path, :class => "btng btn" %>

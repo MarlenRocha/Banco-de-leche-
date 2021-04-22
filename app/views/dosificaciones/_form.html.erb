@@ -1,0 +1,59 @@
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: dosificacion, id:'formulario_dosificaciones', local: true) do |form| %>
+  <% if dosificacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dosificacion.errors.count, "error") %> prohibited this dosificacion from being saved:</h2>
+
+      <ul>
+      <% dosificacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :etiqueta_id %>
+        <%= form.select(:etiqueta_id, @etiquetas.collect{ |e| [e.etiqueta, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %> 
+  </div>
+
+  <div class="field">
+    <%= form.label :recién_nacido %>
+        <%= form.select(:reciennacido_id, @reciennacidos.collect{ |e| [e.curp, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Área_id %>
+        <%= form.select(:area_id, @areas.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %>
+  </div>  
+    
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :número_de_toma %>
+            <%= form.text_field :toma, :class => "form-control" %>           
+        </div> 
+        <div class="form-group col-md-6">
+             <%= form.label :administración %>
+              <%= form.text_field :administracion, :class => "form-control", :placeholder => 'Ejem: 00.00' %>    
+        </div> 
+    </div>
+    
+     <div class="form-row">
+        <div class="form-group col-md-6">
+        <%= form.label :dosificación %>
+        <%= form.text_field :dosificacion, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :fecha_de_dosificación %>
+            <%= form.date_field :fecha_dosificacion, :class => "form-control", :placeholder => 'Ejem: 00.00' %>    
+        </div>
+         
+    </div>
+
+  <%= form.submit "Guardar", :class => "btng btn" %>
+  
+<%= link_to 'Regresar', dosificaciones_path, :class => "btng btn" %>
+<% end %>
+</div>

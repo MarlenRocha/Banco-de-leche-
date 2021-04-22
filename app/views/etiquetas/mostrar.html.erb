@@ -1,0 +1,17 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Generación de etiqueta</h1>
+</div>
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded mx-auto">
+	
+	<h1 class="display-3">No. etiqueta: <%= @etiqueta.id %></h1>
+	<h1 class="display-1">Etiqueta: <%= @etiqueta.etiqueta%></h1>
+</div>
+
+<%= link_to 'Análisis', analisisregistros_path, :class => "btng btn mr-2"  %>
+<%= link_to 'Pasteurizaciones', pasteurizaciones_path, :class => "btng btn mr-2"  %>
+<%= link_to 'Dosificaciones', dosificaciones_path, :class => "btng btn"  %>

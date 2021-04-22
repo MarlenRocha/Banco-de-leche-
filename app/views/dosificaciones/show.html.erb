@@ -1,0 +1,68 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2" style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Dosificación</h1>
+
+</div>
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  
+  
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Recién nacido:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @dosificacion.reciennacido.id %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Fecha de dosificación:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @dosificacion.fecha_dosificacion %></p>
+    </div>
+  </div>
+
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Dosificación:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @dosificacion.dosificacion %></p>
+    </div>
+  </div>
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Número de toma:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @dosificacion.toma %></p>
+    </div>
+  </div>
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Administración:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @dosificacion.administracion %></p>
+    </div>
+  </div>
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Área:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @dosificacion.area.nombre %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_dosificacion_path(@dosificacion), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', dosificaciones_path, :class => "btng btn mr-2" %>
+

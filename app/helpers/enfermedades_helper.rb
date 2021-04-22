@@ -1,0 +1,2 @@
+module EnfermedadesHelper
+end

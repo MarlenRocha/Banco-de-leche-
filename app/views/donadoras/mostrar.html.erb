@@ -1,0 +1,97 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+
+
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Donadora</h1>
+</div>
+
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">CURP:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.curp %></p>
+    </div>
+  </div>
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Apellido paterno:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.paterno %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Apellido materno:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.materno %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Fecha de registro:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.fecha_registro %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Prueba de VIH:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.prueba_vih %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Prueba de sífilis:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.prueba_sifilis %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Prueba de hepatitis:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.prueba_hepatitis %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Consumo de drogas:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @donadora.drogas %></p>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Regesar', donadoras_inicio_path, :class => "btng btn" %>

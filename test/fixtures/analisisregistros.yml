@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  embalaje: MyString
+  color: MyString
+  suciedad: MyString
+  olor: MyString
+  crematocrito: MyString
+  kilocalorias: MyString
+  proteinas: MyString
+  carbohidratos: MyString
+  grasas: MyString
+  cantidad: MyString
+  desechado: one
+  almacenado: one
+  clasificacion: MyString
+
+two:
+  embalaje: MyString
+  color: MyString
+  suciedad: MyString
+  olor: MyString
+  crematocrito: MyString
+  kilocalorias: MyString
+  proteinas: MyString
+  carbohidratos: MyString
+  grasas: MyString
+  cantidad: MyString
+  desechado: two
+  almacenado: two
+  clasificacion: MyString

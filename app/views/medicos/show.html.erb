@@ -1,0 +1,106 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Médico</h1>
+</div>
+
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.nombre %></p>
+    </div>
+</div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Apellido paterno:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.paterno %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Apellido materno:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.materno %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Sexo:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.sexo %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Teléfono:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.telefono %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Edad:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.edad %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Especialidad:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.especialidad.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Hospital:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.hospital.nombre %></p>
+    </div>
+ </div>
+
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nacionalidad:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @medico.nacionalidad.nombre %></p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<%= link_to 'Editar', edit_medico_path(@medico), :class => "btng btn mr-2" %> 
+<%= link_to 'Regresar', medicos_path, :class => "btng btn mr-2" %>
+
+
+
+  

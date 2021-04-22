@@ -1,0 +1,62 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+<div class="col-md-12 mb-4 text-center" >
+      <p id="alert"><%= alert %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Análisis</h1>
+</div>
+
+<div class="col-md-12 pt-4">
+    <%= link_to 'Nuevo registro', new_analisisregistro_path, :class => "btng btn" %>
+</div> 
+
+
+
+<div class="col-md-12 pt-4 table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Crematocrito</th>
+      <th>Kilocalorias</th>
+      <th>Proteínas</th>
+      <th>Carbohidratos</th>
+      <th>Grasas</th>
+      <th>Cantidad</th>
+      <th>Almacenado</th>
+      <th>Desechado</th>
+      <th>Clasificación</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @analisisregistros.each do |analisisregistro| %>
+      <tr>
+        <td><%= analisisregistro.crematocrito %></td>
+        <td><%= analisisregistro.kilocalorias %></td>
+        <td><%= analisisregistro.proteinas %></td>
+        <td><%= analisisregistro.carbohidratos %></td>
+        <td><%= analisisregistro.grasas %></td>
+        <td><%= analisisregistro.cantidad %></td>
+        <td><%= analisisregistro.cantidad_almacenada %></td>
+        <td><%= analisisregistro.cantidad_desechada %></td>
+        <td><%= analisisregistro.clasificacion.nombre %></td>
+        
+
+         <td><%= link_to content_tag(:i, nil, class: "mostrar fas fa-eye", :title=> "Mostar"),analisisregistro %></td>
+
+        <td><%= link_to content_tag(:i, nil, class: "editar fas fa-edit", :title=> "Editar"),edit_analisisregistro_path(analisisregistro) %></td>
+                   
+        <td><%= link_to content_tag(:i, nil, class: "eliminar fas fa-times", :title=> "Eliminar"), analisisregistro, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<div class="mx-auto">
+  <%= will_paginate @analisisregistros %>
+</div>

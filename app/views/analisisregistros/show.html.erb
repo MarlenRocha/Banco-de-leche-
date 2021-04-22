@@ -1,0 +1,105 @@
+
+
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2" style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Análisis</h1>
+
+</div>
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Etiqueta:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.etiqueta.etiqueta %></p>
+    </div>
+  </div>
+  
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Crematocrito:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.crematocrito %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Kilocalorias:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.kilocalorias %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Proteinas:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.proteinas %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Carbohidratos:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.carbohidratos %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Grasas:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.grasas %></p>
+    </div>
+  </div>
+
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Cantidad:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.cantidad %></p>
+    </div>
+  </div>
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Leche desechada:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.cantidad_desechada %></p>
+    </div>
+  </div>
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Leche almacenada:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.cantidad_almacenada %></p>
+    </div>
+  </div>
+   <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Clasificacion:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @analisisregistro.clasificacion.nombre %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_analisisregistro_path(@analisisregistro), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', analisisregistros_path, :class => "btng btn mr-2" %>
+

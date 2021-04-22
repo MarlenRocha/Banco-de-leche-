@@ -1,0 +1,98 @@
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Informe Estatal</h1>
+</div>
+
+
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded d-block">
+
+	
+
+	<div style="padding: 50px 0;">
+		<h3 class="text-center">Cordinación Estatal de Lactancia y Bancos de Leche</h3>
+		<h4 class="text-center">Informe de productividad Estatal de Lactancia Materna y Banco de Leche</h4>
+	</div>
+	<div style="padding: 80px;">
+
+	<h5 class="pb-2 font-weight-bold">INFORMACIÓN DE LA UNIDAD HOSPITALARIA</h5>
+
+	<div style="padding: 15px 0 80px 0;">
+		
+		<div class="d-flex">
+			<p class="font-weight-bold pr-2">Entidad federativa: </p><p> Estado de México</p> 
+		</div>
+
+		<div class="d-flex">
+			<p class="font-weight-bold pr-2">Unidad hospitalaria: </p> <p>Hospital Materno Perinatal "Monica Pretelini Sáenz"</p>
+		</div>
+
+		<div class="d-flex">
+			<p class="font-weight-bold pr-2">Responsable del banco de leche humana:</p> <p><%= session[:nombre]%></p> 
+		</div>
+	</div>
+
+
+	
+	<table class="table table-bordered">
+        <tr class="table-active">
+        	<th>Total de donadoras registradas</th>
+            <th>Total de donaciones</th>
+            <th>Total de bebés beneficiados</th>
+        </tr>
+       
+        <tr>
+        	<td><%= @donadoras %></td>
+            <td><%= @donaciones %></td>
+            <td><%= @reciennacidos %></td>
+       
+          </tr>
+        
+    </table>
+
+   <div  style="margin-top: 70px">
+
+    <table class="table table-bordered">
+        <tr class="table-active">
+            <th>Cantidad de leche almacenada(ml)</th>
+          	<th>Cantidad de leche desechada(ml)</th>
+        </tr>
+       
+        <tr>
+            <td><%= @almacenados %></td>
+            <td><%= @desechados %></td>
+       
+          </tr>
+        
+    </table>
+</div>
+
+
+<div class="row justify-content-center" style="margin-top: 130px">
+	<div class="col-4">
+		<p></p>
+	</div>
+	<div class="col-auto">
+		<p>____________________________</p>
+		<p class="text-center">Autorizó</p>
+		<p class="text-center">Director del hospital</p>
+	</div>
+	<div class="col-4">
+		<p></p>
+	</div>	
+</div>
+
+
+<div class="d-flex justify-content-end" style="padding: 20px;">
+	<p>Generar<a href="/ver_informe.pdf"> PDF</a></p>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+

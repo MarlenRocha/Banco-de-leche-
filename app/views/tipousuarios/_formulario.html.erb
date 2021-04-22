@@ -1,0 +1,39 @@
+	
+
+	<div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :nombre %>
+		<%= form.text_field :nombre, :class => "form-control" %>
+		<%= form.hidden_field :id %>        
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :descripción %>
+			<%= form.text_field :descripcion, :class => "form-control" %>            
+        </div> 
+    </div>
+    <div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :salario %>
+		<%= form.text_field :salario, :class => "form-control", :placeholder => "Ejem: 00.00" %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :rango %>
+		<%= form.text_field :rango, :class => "form-control" %>          
+        </div> 
+    </div>
+
+    <div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :seguro_médico %>
+		<%= form.text_field :seguro, :class => "form-control" %>     
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :Número_de_vacaciones %>
+			<%= form.text_field :vacaciones, :class => "form-control" %>         
+        </div> 
+    </div>
+
+	
+	<%= form.submit "Guardar", :class => "btng btn" %>
+	<%= link_to 'Regresar', tipousuarios_inicio_path, :class => "btng btn" %>
+	

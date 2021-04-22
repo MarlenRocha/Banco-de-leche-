@@ -1,0 +1,55 @@
+
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: pasteurizacion, id: 'formulario_pasteurizaciones', local: true) do |form| %>
+  <% if pasteurizacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pasteurizacion.errors.count, "error") %> prohibited this pasteurizacion from being saved:</h2>
+
+      <ul>
+      <% pasteurizacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+
+  <div class="field">
+    <%= form.label :etiqueta_id %>
+        <%= form.select(:etiqueta_id, @etiquetas.collect{ |e| [e.etiqueta, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %> 
+  </div>  
+
+   <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :acidez_dornic %>
+            <%= form.text_field :acidez_dornic, :class => "form-control" %>      
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :pasteurizacion %>
+            <%= form.text_field :pasteurizacion, :class => "form-control" %>
+                      
+        </div>  
+    </div>
+
+  
+
+   <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :leche_a_almacenar %>
+            <%= form.text_field :cantidad_almacenada, :class => "form-control", :placeholder => 'Ejem: 00.00' %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :leche_a_desechar %>
+            <%= form.text_field :cantidad_desechada, :class => "form-control", :placeholder => 'Ejem: 00.00' %>
+                      
+        </div>  
+    </div>
+
+    <%= form.submit "Guardar", :class => "btng btn" %>
+    <%= link_to 'Regresar', pasteurizaciones_path, :class => "btng btn" %>
+
+  
+<% end %>
+</div>

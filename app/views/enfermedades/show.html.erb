@@ -1,0 +1,71 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Enfermedad</h1>
+</div>
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @enfermedad.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Descripción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @enfermedad.descripcion%></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Tratamiento:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @enfermedad.tratamiento %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Tipo:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @enfermedad.tipo %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Clasificación:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @enfermedad.clasificacion %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nueva:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @enfermedad.nueva %></p>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Editar', edit_enfermedad_path(@enfermedad), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', enfermedades_path, :class => "btng btn" %>
+
+

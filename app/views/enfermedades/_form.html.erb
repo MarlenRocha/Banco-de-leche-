@@ -1,0 +1,73 @@
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: enfermedad, id: 'formulario_enfermedades', local: true) do |form| %>
+  <% if enfermedad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enfermedad.errors.count, "error") %> prohibited this enfermedad from being saved:</h2>
+
+      <ul>
+      <% enfermedad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :nombre %>
+           <%= form.text_field :nombre, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :descripción %>
+            <%= form.text_field :descripcion, :class => "form-control" %>            
+        </div> 
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+           <label for="enfermedad_clasificacion">Clasificación:</label>
+            <select name="enfermedad[clasificacion]" id="enfermedad_clasificacion" class="form-control">
+              <option value="">Selecciona...</option>
+              <option value="Epidémica">Epidémica</option>
+              <option value="Constitucional">Constitucional</option>
+              <option value="Localizada">Localizada</option>
+              <option value="De desarrollo">De desarrollo</option>
+              <option value="Traumatismo">Traumatismo</option>
+            </select>     
+        </div>
+        <div class="form-group col-md-6">
+            <label for="enfermedad_nueva">Nueva:</label>
+            <select name="enfermedad[nueva]" id="enfermedad_nueva" class="form-control">
+              <option value="">Selecciona...</option>
+               <option value="Si">Si</option>
+               <option value="No">No</option>
+            </select>
+        </div> 
+
+      
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :tratamiento %>
+           <%= form.text_field :tratamiento, :class => "form-control" %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :tipo %>
+            <%= form.text_field :tipo, :class => "form-control" %>        
+        </div> 
+    </div>
+
+    
+
+  
+  <%= form.submit "Guardar", :class => "btng btn" %>
+ 
+<%= link_to 'Regresar', enfermedades_path, :class => "btng btn"  %>
+
+<% end %>
+
+</div>
+
+
+

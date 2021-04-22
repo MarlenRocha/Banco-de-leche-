@@ -1,0 +1,67 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Nacionalidad</h1>
+</div>
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @nacionalidad.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Descripción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @nacionalidad.descripcion%></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Tipo:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @nacionalidad.tipo %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Espacio geográfico:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @nacionalidad.espacio_geografico %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Territorio:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @nacionalidad.territorio %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">País:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @nacionalidad.pais.nombre %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_nacionalidad_path(@nacionalidad), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', nacionalidades_path, :class => "btng btn mr-2" %>

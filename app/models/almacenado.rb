@@ -1,0 +1,3 @@
+class Almacenado < ApplicationRecord
+	
+end

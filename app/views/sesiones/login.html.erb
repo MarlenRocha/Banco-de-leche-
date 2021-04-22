@@ -1,0 +1,25 @@
+
+
+<div class="centrar-form">   
+          <%= form_tag(validar_usuario_path, :class => "form-login") do  %>
+            
+            <img class="mx-auto d-block" src="/assets/mamalogo.png" width="180" height="180"  alt="" loading="lazy">
+           
+            <h5 class="title-login text-center" style="color: black;">Inicia sesión</h5>
+            <div class="input-container-login">
+              <i class="fas fa-user icon-login"></i>
+              <%= text_field_tag 'login', nil, placeholder: 'Nombre de usuario', :class => "input-login" %>
+            </div>  
+            <div class="input-container-login">
+           <i class="fas fa-key icon-login"></i>
+              <%= password_field_tag 'password', nil, placeholder: 'Contraseña', :class => "input-login" %>
+            </div>
+            <button type="submit" class="btn-login">Ingresar</button>
+            <div class="mensaje-login text-center" style="color: red;">
+              <p id='alerta'> <%= alert %> </p>
+            </div>
+            
+         <% end %>  
+    </div>
+
+

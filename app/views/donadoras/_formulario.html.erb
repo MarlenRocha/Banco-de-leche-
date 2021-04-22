@@ -1,0 +1,94 @@
+
+    
+    <div class="form-row">
+        <div class="form-group col-md-12">
+        
+        </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+           <%= form.label :curp %>
+        <%= form.text_field :curp, :class => "form-control" %>       
+        </div>
+        <div class="form-group col-md-6">
+             <%= form.label :nombre %>
+        <%= form.text_field :nombre, :class => "form-control" %>
+        <%= form.hidden_field :id %>          
+        </div> 
+    </div>
+
+	<div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :paterno %>
+        <%= form.text_field :paterno, :class => "form-control" %>       
+        </div>
+        <div class="form-group col-md-6">
+             <%= form.label :materno %>
+        <%= form.text_field :materno, :class => "form-control" %>          
+        </div> 
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+           <label for="donadora_prueba_vih">Prueba de VIH:</label>
+          <select name="donadora[prueba_vih]" id="donadora_prueba_vih" class="form-control">
+            <option value="">Selecciona...</option>
+            <option value="positiva">Positiva</option>
+            <option value="negativa">Negativa</option>
+         </select>     
+        </div>
+        <div class="form-group col-md-6">
+            <label for="donadora_prueba_sifilis">Prueba de sifilis:</label>
+          <select name="donadora[prueba_sifilis]" id="donadora_prueba_sifilis" class="form-control">
+            <option value="">Selecciona...</option>
+            <option value="Positiva">Positiva</option>
+            <option value="Negativa">Negativa</option>
+         </select>         
+        </div> 
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+           <label for="donadora_prueba_hepatitis">Prueba de hepatitis:</label>
+          <select name="donadora[prueba_hepatitis]" id="donadora_prueba_hepatitis" class="form-control">
+            <option value="">Selecciona...</option>
+            <option value="Positiva">Positiva</option>
+            <option value="Negativa">Negativa</option>
+         </select>    
+        </div>
+        <div class="form-group col-md-6">
+        <label for="donadora_drogas">Consumo de drogas:</label>
+          <select name="donadora[drogas]" id="donadora_drogas" class="form-control">
+            <option value="">Selecciona...</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+         </select> 
+          </div>
+    </div >
+
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+        <%= form.label :fecha_registro %>
+		<%= form.date_field :fecha_registro, :class => "form-control" %>
+        </div>
+    </div>
+
+    
+	
+	<%= form.submit "Guardar", :class => "btng btn" %>
+    <%= link_to 'Regresar', donadoras_inicio_path, :class => "btng btn" %>
+	
+	
+
+<script type="text/javascript">
+    var actualiza = window.location.pathname.split("/").pop()
+    console.log(actualiza) 
+    if (actualiza == "editar"){
+      console.log("holi")
+      
+      document.getElementById('donadora_curp').name = "donadora[curpa]"
+    }
+      
+</script>

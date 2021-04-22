@@ -1,0 +1,39 @@
+
+
+	<div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :nombre %>
+		<%= form.text_field :nombre, :class => "form-control" %>
+		<%= form.hidden_field :id %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :descripción %>
+			<%= form.text_field :descripcion, :class => "form-control" %>           
+        </div> 
+    </div>
+    <div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :color %>
+		<%= form.text_field :color, :class => "form-control" %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :consistencia %>
+		<%= form.text_field :consistencia, :class => "form-control" %>         
+        </div> 
+    </div>
+
+    <div class="form-row">
+    	<div class="form-group col-md-6">
+           <%= form.label :proteína %>
+		<%= form.text_field :proteina, :class => "form-control" %>     
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :cantidad %>
+		<%= form.text_field :cantidad, :class => "form-control", :placeholder => 'Ejem: 00.000' %>      
+        </div> 
+    </div>
+
+	
+
+	<%= form.submit "Guardar", :class => "btng btn" %>
+	<%= link_to 'Regresar', clasificaciones_inicio_path, :class => "btng btn" %>

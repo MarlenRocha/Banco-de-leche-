@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_extraccion: MyString
+  cantidad: MyString
+  frasco: one
+  area: one
+
+two:
+  fecha_extraccion: MyString
+  cantidad: MyString
+  frasco: two
+  area: two

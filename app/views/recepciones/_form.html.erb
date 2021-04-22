@@ -1,0 +1,47 @@
+
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: recepcion, id: 'formulario_recepciones', local: true) do |form| %>
+  <% if recepcion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recepcion.errors.count, "error") %> prohibited this recepcion from being saved:</h2>
+
+      <ul>
+      <% recepcion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= form.label :folio_del_frasco %>
+          <%= form.select(:frasco_id, @frascos.collect{ |e| [ e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %> 
+       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :Área_id %>
+            <%= form.select(:area_id, @areas.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>             
+        </div> 
+        
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+              <%= form.label :fecha_de_extracción %>
+          <%= form.date_field :fecha_extraccion, :class => "form-control" %>  
+        </div>
+        <div class="form-group col-md-6">
+             <%= form.label :cantidad %>
+             <%= form.text_field :cantidad, :class => "form-control", :placeholder => 'cantidad(ml)'  %>           
+        </div> 
+    </div>
+
+  <%= form.submit "Guardar", :class => "btng btn" %>
+<%= link_to 'Regresar', recepciones_path, :class => "btng btn" %>
+
+  
+  
+<% end %>
+
+</div>

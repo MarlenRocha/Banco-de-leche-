@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_dosificacion: MyString
+  dosificacion: MyString
+  toma: MyString
+  administracion: MyString
+  reciennacido: one
+  area: one
+  etiqueta: one
+
+two:
+  fecha_dosificacion: MyString
+  dosificacion: MyString
+  toma: MyString
+  administracion: MyString
+  reciennacido: two
+  area: two
+  etiqueta: two

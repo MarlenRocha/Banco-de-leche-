@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pblh</title>
+
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8818805f38.js" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'bootstrap', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
+
+
+<style>
+  
+  /* Estilos para el login */
+.title-login{
+    color:#EE4266;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.centrar-form{
+    margin: 30px auto;
+    float:none;
+}
+.form-login {
+    border: 3px solid #f1f1f1;
+    margin: 0px auto;
+    border-radius: 10px;
+    width: 800px;
+    padding: 30px 60px 60px;
+    background-image: url("background.jpg");
+    max-width:500px;
+}
+.input-container-login {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+  }
+  
+  .icon-login {
+    padding: 15px;
+    background: white;
+    color: gray;
+    min-width: 45px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .input-login {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+  }
+  /* Set a style for the submit button */
+  .btn-login {
+    background-color: #E04E8D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 10px;
+  }
+  
+  .btn-login:hover {
+    opacity: 1;
+  }
+  .container-forget{
+      padding-top: 30px;
+  }
+  span.fpsw {
+    float: right;
+  }
+  .mensaje-login{
+    padding-top: 20px;
+    height: 30px;
+  }
+
+</style>
+    
+</head>
+
+  <body>
+
+          <%= yield %>
+  </body>
+</html>

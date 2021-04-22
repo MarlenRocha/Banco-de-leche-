@@ -1,0 +1,101 @@
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: prueba, local: true) do |form| %>
+  <% if prueba.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prueba.errors.count, "error") %> prohibited this prueba from being saved:</h2>
+
+      <ul>
+      <% prueba.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<div class="field">
+    <%= form.label :etiqueta_id %>
+        <%= form.select(:etiqueta_id, @etiquetas.collect{ |e| [e.etiqueta, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %> 
+  </div>
+
+   <div class="form-row">
+        <div class="form-group col-md-3">
+           <%= form.label :embalaje %>
+            <%= form.text_field :embalaje, :class => "form-control" %>       
+        </div>
+        <div class="form-group col-md-3">
+            <%= form.label :color %>
+            <%= form.text_field :color, :class => "form-control" %>           
+        </div> 
+        <div class="form-group col-md-3">
+           <%= form.label :suciedad %>
+            <%= form.text_field :suciedad, :class => "form-control" %>        
+        </div>
+        <div class="form-group col-md-3">
+            <%= form.label :olor %>
+            <%= form.text_field :olor, :class => "form-control" %>           
+        </div> 
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <%= form.label :crematocrito %>
+        <%= form.text_field :crematocrito, :class => "form-control", :placeholder => '%' %>         
+        </div>
+        <div class="form-group col-md-4">
+            <%= form.label :kilocalorias %>
+            <%= form.text_field :kilocalorias, :class => "form-control", :placeholder => 'k/cal' %>            
+        </div> 
+        <div class="form-group col-md-4">
+          
+             <%= form.label :clasificacion_id %>
+            <%= form.select(:clasificacion_id, @clasificaciones.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %>      
+        </div> 
+    </div>
+
+ 
+
+  <div class="form-row">
+        <div class="form-group col-md-4">
+            <%= form.label :proteinas %>
+            <%= form.text_field :proteinas, :class => "form-control", :placeholder => 'g/100ml' %>        
+        </div> 
+        <div class="form-group col-md-4">
+           <%= form.label :carbohidratos %>
+            <%= form.text_field :carbohidratos, :class => "form-control", :placeholder => 'g/100ml' %>        
+        </div>
+        <div class="form-group col-md-4">
+            <%= form.label :grasas %>
+            <%= form.text_field :grasas, :class => "form-control", :placeholder => 'g/100ml' %>            
+        </div> 
+    </div>
+
+ 
+ <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :leche_a_almacenar %>
+            <%= form.text_field :cantidad_almacenada, :class => "form-control", :placeholder => 'ml' %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :leche_a_desechar %>
+            <%= form.text_field :cantidad_desechada, :class => "form-control", :placeholder => 'ml' %>
+                      
+        </div>  
+    </div>
+
+
+   
+
+  
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.text_field :cantidad %>
+  </div>
+
+  <%= form.submit "Guardar", :class => "btng btn" %>
+  <%= link_to 'Regresar', analisisregistros_path, :class => "btng btn" %>
+<% end %>
+</div>

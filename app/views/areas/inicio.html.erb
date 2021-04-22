@@ -1,0 +1,71 @@
+
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+<div class="col-md-12 mb-4 text-center" >
+      <p id="alert"><%= alert %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Áreas</h1>
+</div>
+
+<div class="col-md-12 pt-4">
+    <%= link_to 'Nueva área', area_nuevo_path, :class => "btng btn" %>
+</div> 
+
+
+<div class="col-md-12 pt-4">
+     <h4>Búsqueda</h4>
+    <%= form_tag(buscar_area_path, method: :post, :class => "form-inline") do %>
+                
+      <%= text_field_tag 'nombre', nil, placeholder: 'Nombre', :class => "form-control mb-2 mr-sm-2" %>     
+      
+      <%= text_field_tag 'ubicacion', nil, placeholder: 'Ubicación', :class => "form-control mb-2 mr-sm-2" %>
+      <%= text_field_tag 'existencia', nil, placeholder: 'Existencia', :class => "form-control mb-2 mr-sm-2" %>
+      <%= text_field_tag 'funcion', nil, placeholder: 'Función', :class => "form-control mb-2 mr-sm-2" %> 
+      <%= text_field_tag 'cantidad', nil, placeholder: 'Cantidad', :class => "form-control mb-2 mr-sm-2" %> <button class="search btng btn mb-2"> Buscar</button>      
+          
+    <% end %>   
+</div>
+
+
+<div class="col-md-12 pt-4 table-responsive-sm">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Ubicación</th>
+      <th scope="col">Existencia</th>
+      <th scope="col">Función</th>
+      <th scope="col">Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= area.nombre %></td>
+        <td><%= area.descripcion %></td>
+        <td><%= area.ubicacion %></td>
+        <td><%= area.existencia %></td>
+        <td><%= area.funcion %></td>
+        <td><%= area.cantidad %></td>
+        <td><%= link_to content_tag(:i, nil, class: "mostrar fas fa-eye", :title=> "Mostar"),area_mostrar_path(area.id) %></td>
+
+        <td><%= link_to content_tag(:i, nil, class: "editar fas fa-edit", :title=> "Editar"),area_editar_path(area.id) %></td>
+                   
+        <td><%= link_to content_tag(:i, nil, class: "eliminar fas fa-times", :title=> "Eliminar"), area_eliminar_path(area.id), method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<div class="mx-auto">
+  <%= will_paginate @areas %>
+</div>
+

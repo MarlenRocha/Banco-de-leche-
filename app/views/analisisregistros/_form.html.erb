@@ -1,0 +1,75 @@
+
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: analisisregistro, id:'formulario_analisisregistros',  local: true) do |form| %>
+  <% if analisisregistro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(analisisregistro.errors.count, "error") %> prohibited this analisisregistro from being saved:</h2>
+
+      <ul>
+      <% analisisregistro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+    
+    <div class="form-row">
+      <div class="form-group col-md-12">
+      <%= form.label :etiqueta_id %>
+        <%= form.select(:etiqueta_id, @etiquetas.collect{ |e| [e.etiqueta, e.id]}, {include_blank: 'Seleccionar uno'}, :class => "form-control") %> 
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <%= form.label :crematocrito %>
+        <%= form.text_field :crematocrito, :class => "form-control", :placeholder => '%' %>         
+        </div>
+        <div class="form-group col-md-4">
+            <%= form.label :kilocalorias %>
+            <%= form.text_field :kilocalorias, :class => "form-control", :placeholder => 'k/cal' %>            
+        </div> 
+        <div class="form-group col-md-4">
+          
+             <%= form.label :clasificación %>
+            <%= form.select(:clasificacion_id, @clasificaciones.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>      
+        </div> 
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <%= form.label :proteínas %>
+            <%= form.text_field :proteinas, :class => "form-control", :placeholder => 'g/100ml' %>        
+        </div> 
+        <div class="form-group col-md-4">
+           <%= form.label :carbohidratos %>
+            <%= form.text_field :carbohidratos, :class => "form-control", :placeholder => 'g/100ml' %>        
+        </div>
+        <div class="form-group col-md-4">
+            <%= form.label :grasas %>
+            <%= form.text_field :grasas, :class => "form-control", :placeholder => 'g/100ml' %>            
+        </div> 
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :leche_a_almacenar %>
+            <%= form.text_field :cantidad_almacenada, :class => "form-control", :placeholder => 'ml' %>       
+        </div>
+        <div class="form-group col-md-6">
+            <%= form.label :leche_a_desechar %>
+            <%= form.text_field :cantidad_desechada, :class => "form-control", :placeholder => 'ml' %>
+                      
+        </div>  
+    </div>
+    
+
+ <%= form.submit "Guardar", :class => "btng btn" %>
+  
+<%= link_to 'Regresar', analisisregistros_path, :class => "btng btn" %>
+<% end %>
+</div>

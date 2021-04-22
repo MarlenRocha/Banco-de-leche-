@@ -1,0 +1,14 @@
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Registrar hospital</h1>
+</div>
+
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: @hospital, id: 'formulario_hospitales', url:hospital_crear_path, local:true) do |f|%>
+
+	<%= render 'formulario', form: f %>
+
+<% end %>
+</div>
+
+

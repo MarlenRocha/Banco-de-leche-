@@ -1,0 +1,2 @@
+class Desechado < ApplicationRecord
+end

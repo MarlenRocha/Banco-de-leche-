@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_madre: MyString
+  edad_madre: MyString
+  descripcion: MyString
+  peso: MyString
+  fecha_nacimiento: MyString
+  altura: MyString
+  enfermedad: one
+  area: one
+  medico: one
+
+two:
+  nombre_madre: MyString
+  edad_madre: MyString
+  descripcion: MyString
+  peso: MyString
+  fecha_nacimiento: MyString
+  altura: MyString
+  enfermedad: two
+  area: two
+  medico: two

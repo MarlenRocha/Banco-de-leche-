@@ -1,0 +1,64 @@
+
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2" style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Pasteurizaciones</h1>
+
+</div>
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Acidez dornic:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @pasteurizacion.acidez_dornic %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Pasteurización:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @pasteurizacion.pasteurizacion %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Cantidad de leche almacenada:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @pasteurizacion.cantidad_almacenada %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Cantidad de leche desechada:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @pasteurizacion.cantidad_desechada %></p>
+    </div>
+  </div>
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Cantidad total:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @pasteurizacion.cantidad %></p>
+    </div>
+  </div>
+ 
+</div>
+
+<%= link_to 'Editar', edit_pasteurizacion_path(@pasteurizacion), :class => "btng btn mr-2" %>
+<%= link_to 'Regresar', pasteurizaciones_path, :class => "btng btn mr-2" %>
+
+
+
+

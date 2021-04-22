@@ -1,0 +1,67 @@
+<div class="col-md-12 mb-4 text-center" >
+      <p id="notice"><%= notice %></p>
+</div>
+
+<div class="col-md-12 pb-2 " style="border-bottom: solid 3px #cf3b76; ">
+      <h1>Hospital</h1>
+</div>
+
+
+
+<div class="mostrar-contenedor container mt-4 mb-4  p-4 rounded">
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Nombre:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @hospital.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Descripción:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @hospital.descripcion%></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Teléfono:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @hospital.telefono %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Dirección:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @hospital.direccion %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Estado:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @hospital.estado.nombre %></p>
+    </div>
+  </div>
+
+  <div class="row p-2">
+    <div class="col-6">
+      <p class="text-right font-weight-bold">Correo:</p> 
+    </div>
+    <div class="col-6">
+      <p><%= @hospital.correo %></p>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Regesar', hospitales_inicio_path, :class => "btng btn" %>

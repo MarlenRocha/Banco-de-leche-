@@ -1,0 +1,125 @@
+<div class="col-md-12 pt-4">
+
+<%= form_with(model: usuario, id: 'formulario_usuarios', local: true) do |form| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% usuario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <input type="hidden" name="usuario[actualizar]" value= "false" id="actualizar">
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :RFC %>
+      <%= form.text_field :rfc, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :CURP %>
+    <%= form.text_field :curp, :class => "form-control" %>
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, :class => "form-control" %>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :Apellido_paterno %>
+    <%= form.text_field :paterno, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :Apellido_materno %>
+      <%= form.text_field :materno, :class => "form-control" %>
+    </div>
+  </div> 
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.label :fecha_de_nacimiento %>
+    <%= form.date_field :fecha_nacimiento, :class => "form-control", :placeholder => "AAAA-MM-DD" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= form.label :edad %>
+    <%= form.text_field :edad, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= form.label :teléfono %>
+    <%= form.text_field :telefono, :class => "form-control" %>
+    </div>
+  </div> 
+
+  <fieldset class="form-group">
+    <div class="row">
+      <%= form.label :sexo,:class => "col-form-label col-sm-2 pt-0" %>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <%= form.radio_button(:sexo, 'F', :class => "form-check-input") %>
+          <label class="form-check-label" for="usuario_sexo_f">
+            Femenino
+          </label>
+        </div>
+        <div class="form-check">
+          <%= form.radio_button(:sexo, 'M', :class => "form-check-input") %>
+          <label class="form-check-label" for="usuario_sexo_f">
+            Masculino
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.label :correo %>
+      <%= form.text_field :correo, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= form.label :tipo_de_usuario %>
+      <%= form.select(:tipousuario_id, @tipousuarios.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= form.label :hospital %>
+      <%= form.select(:hospital_id, @hospitales.collect{ |e| [e.nombre, e.id]}, {include_blank: 'Seleccionar...'}, :class => "form-control") %>
+    </div>
+  </div> 
+ 
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :Nombre_de_usuario %>
+    <%= form.text_field :login, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :Contraseña %>
+      <%= form.password_field :password, :class => "form-control" %>
+    </div>
+  </div> 
+  
+
+
+  <%= form.submit "Guardar", :class => "btng btn" %>
+  
+  <%= link_to 'Regresar', usuarios_path, :class => "btng btn" %>
+
+
+<% end %>
+</div>
+
+<script type="text/javascript">
+    var actualiza = window.location.pathname.split("/").pop()
+    console.log(actualiza) 
+    if (actualiza == "edit"){
+      console.log("holi")
+      document.getElementById('usuario_rfc').name = "usuario[rfca]"
+      document.getElementById('usuario_curp').name = "usuario[curpa]"
+    }
+      
+</script>

@@ -1,0 +1,2 @@
+class AlmacenadosController < ApplicationController
+end

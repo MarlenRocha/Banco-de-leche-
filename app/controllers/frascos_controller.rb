@@ -1,0 +1,3 @@
+class FrascosController < ApplicationController
+
+end
